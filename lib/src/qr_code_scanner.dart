@@ -79,13 +79,11 @@ class _QRViewState extends State<QRView> {
       child: SizeChangedLayoutNotifier(
         child: (widget.overlay != null)
             ? _getPlatformQrViewWithOverlay()
-            : Center(
-                child: SizedBox(
-                  height: widget.height ?? 0,
-                  width: widget.width ?? 0,
-                  child: _getPlatformQrView(),
-                ),
-              ),
+            : SizedBox(
+              height: widget.height ?? 0,
+              width: widget.width ?? 0,
+              child: _getPlatformQrView(),
+            ),
       ),
     );
   }
